@@ -142,9 +142,9 @@
           "destination" : {
             "comments" : "",
             "groupId" : "f3e5d08f-660e-302e-9546-24c922ddb340",
-            "id" : "f8cba6a2-6a71-3b87-a76c-977f18deef2c",
-            "name" : "Funnel",
-            "type" : "FUNNEL"
+            "id" : "27523662-f95d-305a-8b4c-f4d595e0f94e",
+            "name" : "EvaluateJsonPath",
+            "type" : "PROCESSOR"
           },
           "flowFileExpiration" : "0 sec",
           "groupIdentifier" : "f3e5d08f-660e-302e-9546-24c922ddb340",
@@ -281,6 +281,36 @@
             "groupId" : "f3e5d08f-660e-302e-9546-24c922ddb340",
             "id" : "708a1bae-275a-3f82-a7ec-772fb8a41f94",
             "name" : "ExecuteScript",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "f3e5d08f-660e-302e-9546-24c922ddb340",
+            "id" : "14227151-1040-3632-8bdb-01027936d6e0",
+            "name" : "PutSlack",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "f3e5d08f-660e-302e-9546-24c922ddb340",
+          "identifier" : "fb7f9e0e-5bc8-386a-ae21-89ee9fe30ceb",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "matched" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "f3e5d08f-660e-302e-9546-24c922ddb340",
+            "id" : "27523662-f95d-305a-8b4c-f4d595e0f94e",
+            "name" : "EvaluateJsonPath",
             "type" : "PROCESSOR"
           },
           "zIndex" : 0
@@ -974,6 +1004,75 @@
           "type" : "org.apache.nifi.processors.standard.UpdateCounter",
           "yieldDuration" : "1 sec"
         }, {
+          "autoTerminatedRelationships" : [ "success", "failure" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-slack-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.16.3"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "f3e5d08f-660e-302e-9546-24c922ddb340",
+          "identifier" : "14227151-1040-3632-8bdb-01027936d6e0",
+          "name" : "PutSlack",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 1992.0,
+            "y" : 224.0
+          },
+          "properties" : {
+            "webhook-text" : "errorType: ${errorType}\nerrorMessage: ${errorMessage}",
+            "username" : "SCF pipeline"
+          },
+          "propertyDescriptors" : {
+            "icon-emoji" : {
+              "displayName" : "Icon Emoji",
+              "identifiesControllerService" : false,
+              "name" : "icon-emoji",
+              "sensitive" : false
+            },
+            "webhook-url" : {
+              "displayName" : "Webhook URL",
+              "identifiesControllerService" : false,
+              "name" : "webhook-url",
+              "sensitive" : true
+            },
+            "webhook-text" : {
+              "displayName" : "Webhook Text",
+              "identifiesControllerService" : false,
+              "name" : "webhook-text",
+              "sensitive" : false
+            },
+            "channel" : {
+              "displayName" : "Channel",
+              "identifiesControllerService" : false,
+              "name" : "channel",
+              "sensitive" : false
+            },
+            "icon-url" : {
+              "displayName" : "Icon URL",
+              "identifiesControllerService" : false,
+              "name" : "icon-url",
+              "sensitive" : false
+            },
+            "username" : {
+              "displayName" : "Username",
+              "identifiesControllerService" : false,
+              "name" : "username",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.slack.PutSlack",
+          "yieldDuration" : "1 sec"
+        }, {
           "autoTerminatedRelationships" : [ "unmatched" ],
           "bulletinLevel" : "WARN",
           "bundle" : {
@@ -1023,6 +1122,79 @@
               "displayName" : "id",
               "identifiesControllerService" : false,
               "name" : "id",
+              "sensitive" : false
+            },
+            "Path Not Found Behavior" : {
+              "displayName" : "Path Not Found Behavior",
+              "identifiesControllerService" : false,
+              "name" : "Path Not Found Behavior",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.EvaluateJsonPath",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "failure", "unmatched" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.16.3"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "f3e5d08f-660e-302e-9546-24c922ddb340",
+          "identifier" : "27523662-f95d-305a-8b4c-f4d595e0f94e",
+          "name" : "EvaluateJsonPath",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 1624.0,
+            "y" : 32.0
+          },
+          "properties" : {
+            "Destination" : "flowfile-attribute",
+            "errorType" : "$.errorType",
+            "Return Type" : "auto-detect",
+            "errorMessage" : "$.errorMessage",
+            "Null Value Representation" : "empty string",
+            "Path Not Found Behavior" : "ignore"
+          },
+          "propertyDescriptors" : {
+            "Destination" : {
+              "displayName" : "Destination",
+              "identifiesControllerService" : false,
+              "name" : "Destination",
+              "sensitive" : false
+            },
+            "errorType" : {
+              "displayName" : "errorType",
+              "identifiesControllerService" : false,
+              "name" : "errorType",
+              "sensitive" : false
+            },
+            "Return Type" : {
+              "displayName" : "Return Type",
+              "identifiesControllerService" : false,
+              "name" : "Return Type",
+              "sensitive" : false
+            },
+            "errorMessage" : {
+              "displayName" : "errorMessage",
+              "identifiesControllerService" : false,
+              "name" : "errorMessage",
+              "sensitive" : false
+            },
+            "Null Value Representation" : {
+              "displayName" : "Null Value Representation",
+              "identifiesControllerService" : false,
+              "name" : "Null Value Representation",
               "sensitive" : false
             },
             "Path Not Found Behavior" : {
