@@ -1,0 +1,6 @@
+flows:
+  022fd5d7-49e1-4e62-ab0b-fb0eba54fc5e: {ver: 1, file: ReadDataLake.snapshot, comments: create
+      a flow to read JSON files from local data lake, author: anonymous, created: 1720524342043,
+    flowName: ReadDataLake, flowDesc: flow to read JSON files from the data lake}
+layoutVer: 1
+bucketId: 751d6721-5e51-4659-b58d-8af71a2e384a
