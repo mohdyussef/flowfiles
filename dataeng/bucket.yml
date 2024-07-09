@@ -1,4 +1,7 @@
 flows:
+  d64d3f8a-0551-4482-a927-34f1dce1a5fa: {ver: 1, file: ReadDataLake.snapshot, comments: create
+      a flow to read JSON files from the data lake, author: anonymous, created: 1720524079261,
+    flowName: ReadDataLake, flowDesc: flow to read JSON files from the data lake}
   13562e8e-4c6f-4bef-8544-43703455e6a1: {ver: 5, file: SeeClickFix.snapshot, comments: sent
       fetch issue failure to seck, author: anonymous, created: 1720500395547, flowName: SeeClickFix,
     flowDesc: ''}
