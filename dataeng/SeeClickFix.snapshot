@@ -71,6 +71,36 @@
         }, {
           "backPressureDataSizeThreshold" : "1 GB",
           "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "f3e5d08f-660e-302e-9546-24c922ddb340",
+            "id" : "57ec56e8-e629-3b7b-958f-94b1ca3e06cb",
+            "name" : "UpdateCounter",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "f3e5d08f-660e-302e-9546-24c922ddb340",
+          "identifier" : "e3b0c7e0-204a-301e-81c3-e9c28b3ebf63",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "f3e5d08f-660e-302e-9546-24c922ddb340",
+            "id" : "7f855eaa-5e11-3ec3-8969-8b7af776497e",
+            "name" : "PutElasticsearchHttp",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
           "bends" : [ {
             "x" : 1443.0,
             "y" : 168.0
@@ -221,36 +251,6 @@
             "groupId" : "f3e5d08f-660e-302e-9546-24c922ddb340",
             "id" : "928986e1-df55-3562-a471-01127ab6284a",
             "name" : "GenerateFlowFile",
-            "type" : "PROCESSOR"
-          },
-          "zIndex" : 0
-        }, {
-          "backPressureDataSizeThreshold" : "1 GB",
-          "backPressureObjectThreshold" : 10000,
-          "bends" : [ ],
-          "componentType" : "CONNECTION",
-          "destination" : {
-            "comments" : "",
-            "groupId" : "f3e5d08f-660e-302e-9546-24c922ddb340",
-            "id" : "5a96cba7-7dec-32a7-9be6-c18cad574e95",
-            "name" : "new wharehouse",
-            "type" : "PROCESSOR"
-          },
-          "flowFileExpiration" : "0 sec",
-          "groupIdentifier" : "f3e5d08f-660e-302e-9546-24c922ddb340",
-          "identifier" : "0ebe4240-29bd-3865-8a53-adc9341829a9",
-          "labelIndex" : 1,
-          "loadBalanceCompression" : "DO_NOT_COMPRESS",
-          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-          "name" : "",
-          "partitioningAttribute" : "",
-          "prioritizers" : [ ],
-          "selectedRelationships" : [ "matched" ],
-          "source" : {
-            "comments" : "",
-            "groupId" : "f3e5d08f-660e-302e-9546-24c922ddb340",
-            "id" : "851097aa-11b0-3a45-b5da-78e07e87cb14",
-            "name" : "EvaluateJsonPath",
             "type" : "PROCESSOR"
           },
           "zIndex" : 0
@@ -506,174 +506,6 @@
           "concurrentlySchedulableTaskCount" : 1,
           "executionNode" : "ALL",
           "groupIdentifier" : "f3e5d08f-660e-302e-9546-24c922ddb340",
-          "identifier" : "807ae6b0-6693-3c5f-9cee-a235c38a1929",
-          "name" : "new wharehouse",
-          "penaltyDuration" : "30 sec",
-          "position" : {
-            "x" : 1832.0,
-            "y" : 280.0
-          },
-          "properties" : {
-            "Support Fragmented Transactions" : "true",
-            "Batch Size" : "100",
-            "Obtain Generated Keys" : "false",
-            "database-session-autocommit" : "false",
-            "rollback-on-failure" : "false"
-          },
-          "propertyDescriptors" : {
-            "Support Fragmented Transactions" : {
-              "displayName" : "Support Fragmented Transactions",
-              "identifiesControllerService" : false,
-              "name" : "Support Fragmented Transactions",
-              "sensitive" : false
-            },
-            "putsql-sql-statement" : {
-              "displayName" : "SQL Statement",
-              "identifiesControllerService" : false,
-              "name" : "putsql-sql-statement",
-              "sensitive" : false
-            },
-            "Transaction Timeout" : {
-              "displayName" : "Transaction Timeout",
-              "identifiesControllerService" : false,
-              "name" : "Transaction Timeout",
-              "sensitive" : false
-            },
-            "Batch Size" : {
-              "displayName" : "Batch Size",
-              "identifiesControllerService" : false,
-              "name" : "Batch Size",
-              "sensitive" : false
-            },
-            "Obtain Generated Keys" : {
-              "displayName" : "Obtain Generated Keys",
-              "identifiesControllerService" : false,
-              "name" : "Obtain Generated Keys",
-              "sensitive" : false
-            },
-            "JDBC Connection Pool" : {
-              "displayName" : "JDBC Connection Pool",
-              "identifiesControllerService" : true,
-              "name" : "JDBC Connection Pool",
-              "sensitive" : false
-            },
-            "database-session-autocommit" : {
-              "displayName" : "Database Session AutoCommit",
-              "identifiesControllerService" : false,
-              "name" : "database-session-autocommit",
-              "sensitive" : false
-            },
-            "rollback-on-failure" : {
-              "displayName" : "Rollback On Failure",
-              "identifiesControllerService" : false,
-              "name" : "rollback-on-failure",
-              "sensitive" : false
-            }
-          },
-          "runDurationMillis" : 0,
-          "scheduledState" : "ENABLED",
-          "schedulingPeriod" : "0 sec",
-          "schedulingStrategy" : "TIMER_DRIVEN",
-          "style" : { },
-          "type" : "org.apache.nifi.processors.standard.PutSQL",
-          "yieldDuration" : "1 sec"
-        }, {
-          "autoTerminatedRelationships" : [ ],
-          "bulletinLevel" : "WARN",
-          "bundle" : {
-            "artifact" : "nifi-standard-nar",
-            "group" : "org.apache.nifi",
-            "version" : "1.16.3"
-          },
-          "comments" : "",
-          "componentType" : "PROCESSOR",
-          "concurrentlySchedulableTaskCount" : 1,
-          "executionNode" : "ALL",
-          "groupIdentifier" : "f3e5d08f-660e-302e-9546-24c922ddb340",
-          "identifier" : "5a96cba7-7dec-32a7-9be6-c18cad574e95",
-          "name" : "new wharehouse",
-          "penaltyDuration" : "30 sec",
-          "position" : {
-            "x" : 1816.0,
-            "y" : 416.0
-          },
-          "properties" : {
-            "Support Fragmented Transactions" : "true",
-            "Batch Size" : "100",
-            "Obtain Generated Keys" : "false",
-            "database-session-autocommit" : "false",
-            "rollback-on-failure" : "false"
-          },
-          "propertyDescriptors" : {
-            "Support Fragmented Transactions" : {
-              "displayName" : "Support Fragmented Transactions",
-              "identifiesControllerService" : false,
-              "name" : "Support Fragmented Transactions",
-              "sensitive" : false
-            },
-            "putsql-sql-statement" : {
-              "displayName" : "SQL Statement",
-              "identifiesControllerService" : false,
-              "name" : "putsql-sql-statement",
-              "sensitive" : false
-            },
-            "Transaction Timeout" : {
-              "displayName" : "Transaction Timeout",
-              "identifiesControllerService" : false,
-              "name" : "Transaction Timeout",
-              "sensitive" : false
-            },
-            "Batch Size" : {
-              "displayName" : "Batch Size",
-              "identifiesControllerService" : false,
-              "name" : "Batch Size",
-              "sensitive" : false
-            },
-            "Obtain Generated Keys" : {
-              "displayName" : "Obtain Generated Keys",
-              "identifiesControllerService" : false,
-              "name" : "Obtain Generated Keys",
-              "sensitive" : false
-            },
-            "JDBC Connection Pool" : {
-              "displayName" : "JDBC Connection Pool",
-              "identifiesControllerService" : true,
-              "name" : "JDBC Connection Pool",
-              "sensitive" : false
-            },
-            "database-session-autocommit" : {
-              "displayName" : "Database Session AutoCommit",
-              "identifiesControllerService" : false,
-              "name" : "database-session-autocommit",
-              "sensitive" : false
-            },
-            "rollback-on-failure" : {
-              "displayName" : "Rollback On Failure",
-              "identifiesControllerService" : false,
-              "name" : "rollback-on-failure",
-              "sensitive" : false
-            }
-          },
-          "runDurationMillis" : 0,
-          "scheduledState" : "ENABLED",
-          "schedulingPeriod" : "0 sec",
-          "schedulingStrategy" : "TIMER_DRIVEN",
-          "style" : { },
-          "type" : "org.apache.nifi.processors.standard.PutSQL",
-          "yieldDuration" : "1 sec"
-        }, {
-          "autoTerminatedRelationships" : [ ],
-          "bulletinLevel" : "WARN",
-          "bundle" : {
-            "artifact" : "nifi-standard-nar",
-            "group" : "org.apache.nifi",
-            "version" : "1.16.3"
-          },
-          "comments" : "",
-          "componentType" : "PROCESSOR",
-          "concurrentlySchedulableTaskCount" : 1,
-          "executionNode" : "ALL",
-          "groupIdentifier" : "f3e5d08f-660e-302e-9546-24c922ddb340",
           "identifier" : "928986e1-df55-3562-a471-01127ab6284a",
           "name" : "GenerateFlowFile",
           "penaltyDuration" : "30 sec",
@@ -740,7 +572,7 @@
           "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
           "yieldDuration" : "1 sec"
         }, {
-          "autoTerminatedRelationships" : [ "success", "retry" ],
+          "autoTerminatedRelationships" : [ "retry" ],
           "bulletinLevel" : "WARN",
           "bundle" : {
             "artifact" : "nifi-elasticsearch-nar",
@@ -1095,6 +927,51 @@
           "schedulingStrategy" : "TIMER_DRIVEN",
           "style" : { },
           "type" : "org.apache.nifi.processors.script.ExecuteScript",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "success" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.16.3"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "f3e5d08f-660e-302e-9546-24c922ddb340",
+          "identifier" : "57ec56e8-e629-3b7b-958f-94b1ca3e06cb",
+          "name" : "UpdateCounter",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 1984.0,
+            "y" : 392.0
+          },
+          "properties" : {
+            "counter-name" : "scf_sent_toelastic",
+            "delta" : "1"
+          },
+          "propertyDescriptors" : {
+            "counter-name" : {
+              "displayName" : "Counter Name",
+              "identifiesControllerService" : false,
+              "name" : "counter-name",
+              "sensitive" : false
+            },
+            "delta" : {
+              "displayName" : "Delta",
+              "identifiesControllerService" : false,
+              "name" : "delta",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.UpdateCounter",
           "yieldDuration" : "1 sec"
         }, {
           "autoTerminatedRelationships" : [ "unmatched" ],
