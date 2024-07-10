@@ -1,7 +1,13 @@
 flows:
-  022fd5d7-49e1-4e62-ab0b-fb0eba54fc5e: {ver: 1, file: ReadDataLake.snapshot, comments: create
-      a flow to read JSON files from local data lake, author: anonymous, created: 1720524342043,
-    flowName: ReadDataLake, flowDesc: flow to read JSON files from the data lake}
+  022fd5d7-49e1-4e62-ab0b-fb0eba54fc5e:
+    ver: 2
+    file: ReadDataLake.snapshot
+    comments: |
+      re-arrange processors
+    author: anonymous
+    created: 1720588137479
+    flowName: ReadDataLake
+    flowDesc: flow to read JSON files from the data lake
   1d0197b3-76bc-4125-87aa-7db0f8999a65: {ver: 1, file: data_Staging.snapshot, comments: '',
     author: anonymous, created: 1720587925977, flowName: data Staging, flowDesc: ''}
   6864571a-75c0-44ac-b4a0-91b7008ce501: {ver: 1, file: datalake_scan.snapshot, comments: '',

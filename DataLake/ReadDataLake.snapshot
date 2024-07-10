@@ -112,15 +112,15 @@
           "identifier" : "6baedf20-0afc-3a86-b9d6-04ec72c36467",
           "name" : "OutputDataLake",
           "position" : {
-            "x" : -56.0,
+            "x" : -48.0,
             "y" : 520.0
           },
           "scheduledState" : "ENABLED",
           "type" : "OUTPUT_PORT"
         } ],
         "position" : {
-          "x" : 118.0,
-          "y" : 43.5
+          "x" : -200.0,
+          "y" : 16.0
         },
         "processGroups" : [ ],
         "processors" : [ {
@@ -140,7 +140,7 @@
           "name" : "GetFile",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : -112.0,
+            "x" : -104.0,
             "y" : -120.0
           },
           "properties" : {
